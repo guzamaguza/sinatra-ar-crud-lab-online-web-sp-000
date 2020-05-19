@@ -40,8 +40,9 @@ class ApplicationController < Sinatra::Base
   end
 
   delete '/articles/:id' do
+      binding.pry
     Article.destroy(params["id"])
-    binding.pry
+
     redirect to '/articles'
   end
 
